@@ -1,0 +1,22 @@
+{
+    "name": "natilu/app-sebitas",
+    "description": "Proyecto de titulacion, agendamiento de citas para la peluqueria Sebitas",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "MVC\\" : "./", 
+            "Controllers\\" : "./controllers",
+            "Model\\" : "./models",
+            "Classes\\" : "./classes"
+        }
+    },
+    "authors": [
+        {
+            "name": "NatalyGuallichico01",
+            "email": "natilu.naty@gmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.6"
+    }
+}
