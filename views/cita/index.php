@@ -4,6 +4,9 @@
 <br/>
 <p class="descripcionPagina">Elige el/los servicios que deseas e ingresa tus datos</p>
 
+<?php
+include_once __DIR__ . '/../templates/barra.php';
+?>
 
 <div id="app">
     <nav class="tabs">
@@ -34,7 +37,7 @@
 
             <div class="campo">
                 <label for="hora">Hora: </label>
-                <input id="hora" type="time"/>
+                <input id="hora" type="time" />
             </div>
 
             <input type="hidden" id="id" value="<?php echo $id; ?>"/>
@@ -58,6 +61,7 @@
 
 <?php
     $script="
+        <script src='//cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script src='build/js/app.js'></script>
     ";
 ?>

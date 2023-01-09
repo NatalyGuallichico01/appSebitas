@@ -24,3 +24,4 @@ include_once __DIR__ . "/../templates/alertas.php";
     <a href="/crearCuenta">¿Aún no tienes una cuenta? Crear cuenta</a>
     <a href="/olvidarPassword">¿Olvidaste tu contraseña?</a>
 </div>
+

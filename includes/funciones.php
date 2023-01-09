@@ -12,3 +12,23 @@ function s($html) : string {
     $s = htmlspecialchars($html);
     return $s;
 }
+
+function isLast(string  $actual, string $proximo): bool{
+    if($actual !==$proximo){
+        return true;
+    }
+    return false;
+}
+
+//FUNCION QUE REVISA QUE EL USUARIO ESTA AUTENTICADO
+function isAuth(): void{
+    if(!isset($_SESSION['login'])){
+        header('Location: /');
+    }
+}
+
+function isAdmin():void{
+    if(!isset($_SESSION['admin'])){
+        header('Location: /');
+    }
+}

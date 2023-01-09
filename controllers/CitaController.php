@@ -8,6 +8,8 @@ class CitaController{
     public static function index(Router $router){
         
         //session_start();
+
+        isAuth();
         //debuguear($_SESSION);
 
         $router->render('cita/index', [

@@ -2,5 +2,8 @@
 @use 'base/mixins' as m;
 
 .boton{
-    @include m.boton(v.$negro, v.$blanco)
+    @include m.boton(v.$negro, v.$blanco);
+}
+.botonDelete{
+    @include m.boton(v.$rojo, v.$blanco);
 }
