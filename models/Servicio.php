@@ -5,18 +5,18 @@ namespace Model;
 class Servicio extends ActiveRecord{
     //base de datos
     protected static $tabla='servicios';
-    protected static $columnasDB = ['id', 'nombre', 'precio'];
+    protected static $columnasDB = ['id', 'nombre', 'precio', 'descripcion'];
 
     public $id;
     public $nombre;
     public $precio;
-    //public $detalle;
+    public $descripcion;
 
     public function __construct($args=[]){
         $this->id= $args['id'] ?? null;
         $this->nombre= $args['nombre'] ?? '';
         $this->precio= $args['precio'] ?? '';
-        //$this->detalle= $args['detalle'] ?? '';
+        $this->descripcion= $args['descripcion'] ?? '';
 
     }
 
@@ -30,9 +30,9 @@ class Servicio extends ActiveRecord{
         if(!is_numeric($this->precio)){
             self::$alertas['error'][]='El Precio del Servicio no es válido';
         }
-        // if(!$this->detalle){
-        //     self::$alertas['error'][]='El campo Detalle del Servicio es obligatorio';
-        // }
+        if(!$this->descripcion){
+            self::$alertas['error'][]='El campo Descripción del Servicio es obligatorio';
+        }
 
         return self::$alertas;
         

@@ -44,7 +44,7 @@ class Email{
         $mail->CharSet='UTF-8';
 
         $contenido= '<html>';
-        $contenido.="<p><strong>Hola " . $this->email . "</strong> Has creado tu cuenta en Peluquería Sebitas, para confirmar presiona el siguiente enlace</p>";
+        $contenido.="<p><strong>Hola " . $this->nombre . "</strong> Has creado tu cuenta en Peluquería Sebitas, para confirmar presiona el siguiente enlace</p>";
         $contenido .="<p>Presiona aquí: <a href='http://localhost:3000/confirmarCuenta?token=".$this->token."'>Confirmar Cuenta</a>";
         $contenido .="<p>Si no solicito esta cuenta ignore el mensaje</p>";
         $contenido .='</html>';
@@ -95,5 +95,8 @@ class Email{
         $mail->send();
 
     }
+
+    //enviar correo de cita agendad exitosamente
+    
 
 }

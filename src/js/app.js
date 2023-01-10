@@ -122,7 +122,7 @@ async function checkAPI(){
 
 function viewServices(servicios){
     servicios.forEach(servicio=>{
-        const {id, nombre, precio} = servicio;
+        const {id, nombre, precio, descripcion} = servicio;
         const nombreServicio=document.createElement('P');
         nombreServicio.classList.add('nombreServicio');
         nombreServicio.textContent=nombre;
@@ -130,6 +130,10 @@ function viewServices(servicios){
         const precioServicio=document.createElement('P');
         precioServicio.classList.add('precioServicio');
         precioServicio.textContent=`$ ${precio}`;
+
+        const descripcionServicio=document.createElement('P');
+        descripcionServicio.classList.add('descripcionServicio');
+        descripcionServicio.textContent=descripcion;
 
         const servicioDiv=document.createElement('DIV');
         servicioDiv.classList.add('servicio');
@@ -141,6 +145,7 @@ function viewServices(servicios){
         //mostrar en pantalla
         servicioDiv.appendChild(nombreServicio);
         servicioDiv.appendChild(precioServicio);
+        servicioDiv.appendChild(descripcionServicio);
 
         document.querySelector('#servicios').appendChild(servicioDiv);
     });
@@ -271,16 +276,21 @@ function viewResumen(){
 
     //Iterando y mostrando los servicios
     servicios.forEach(servicio=>{
-        const {id, precio, nombre}=servicio;
+        const {id, precio, nombre, descripcion}=servicio;
         const contenedorServicio=document.createElement('DIV');
         contenedorServicio.classList.add('contenedorServicio');
 
         const textServicio= document.createElement('P');
         textServicio.textContent=nombre;
 
+        const textDescripcion= document.createElement('P');
+        textDescripcion.innerHTML=`<span>Incluye </span>${descripcion}`;
+
         const precioServicio=document.createElement('P');
         precioServicio.innerHTML=`<span>Precio: </span>$${precio}`;
+
         contenedorServicio.appendChild(textServicio);
+        contenedorServicio.appendChild(textDescripcion);
         contenedorServicio.appendChild(precioServicio);
 
         //e.target.value='';
