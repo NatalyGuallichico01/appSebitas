@@ -50,3 +50,14 @@
         margin:0 0 1rem 0;
     }
 }
+
+.barraServicio{
+    margin-bottom: v.$separacion;
+    @include m.tablet{
+        display: flex;
+        justify-content: align-items;
+    }
+    .boton{
+        margin:0 0 1rem 0;
+    }
+}

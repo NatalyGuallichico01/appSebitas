@@ -1,7 +1,7 @@
 <?php
 
 $db = mysqli_connect('localhost', 'root', 'admin', 'appsebitas');
-
+//debuguear($_ENV);
 
 if (!$db) {
     echo "Error: No se pudo conectar a MySQL.";

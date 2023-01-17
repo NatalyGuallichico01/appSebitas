@@ -7,6 +7,7 @@ use Controllers\CitaController;
 use Controllers\LoginController;
 use Controllers\AdminController;
 use Controllers\ServicioController;
+use Controllers\ClienteController;
 use MVC\Router;
 
 $router = new Router();
@@ -50,6 +51,13 @@ $router->get('/servicios/actualizar', [ServicioController::class, 'actualizar'])
 $router->post('/servicios/actualizar', [ServicioController::class, 'actualizar']);
 $router->post('/servicios/eliminar', [ServicioController::class, 'eliminar']);
 
+//CRUD DE CIENTES
+$router->get('/clientes', [ClienteController::class, 'index']);
+$router->get('/clientes/crear', [ClienteController::class, 'crear']);
+$router->post('/clientes/crear', [ClienteController::class, 'crear']);
+$router->get('/clientes/actualizar', [ClienteController::class, 'actualizar']);
+$router->post('/clientes/actualizar', [ClienteController::class, 'actualizar']);
+$router->post('/clientes/eliminar', [ClienteController::class, 'eliminar']);
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();

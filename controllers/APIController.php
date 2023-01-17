@@ -4,6 +4,9 @@ namespace Controllers;
 use Model\Servicio;
 use Model\Cita;
 use Model\CitaServicio;
+use Classes\Email;
+use Model\AdminCita;
+use Model\Usuario;
 
 class APIController{
     public static function index(){
@@ -32,8 +35,12 @@ class APIController{
                 'citaId'=>$id,
                 'servicioId'=>$idServicio
             ];
+            
             $citaServicio= new CitaServicio($args);
             $citaServicio->guardar();
+            //enviar email de datos de la cita
+            $email=new Email($usuario->email, $usuario->nombre, $usuario->token);
+            $email->sendCitaCreate();
         }
         // //retornamos una respuesta
         // $respuesta=[

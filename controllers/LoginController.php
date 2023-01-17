@@ -2,7 +2,6 @@
 namespace Controllers;
 
 use Classes\Email;
-use ComposerAutoloaderInit58f5f6f8bad72e0e3c98121b91a21a32;
 use MVC\Router;
 use Model\Usuario;
 
