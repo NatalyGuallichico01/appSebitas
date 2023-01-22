@@ -62,7 +62,6 @@ function tabs() {
             viewSecction();
             botonesPaginador();
             
-
         });
     });
 }
@@ -151,7 +150,10 @@ function viewServices(servicios){
     });
 }
 
+
+
 function selectService(servicio){
+    //console.log(servicios);
     const{id}=servicio;
     const {servicios}=cita;
 
@@ -192,6 +194,7 @@ function nameClient(){
 
 function selectionDate(){
     const inputFecha= document.querySelector('#fecha');
+    //const citas = await fetchCitas()
     inputFecha.addEventListener('input', function(e){
         const dia=new Date(e.target.value).getUTCDay();
         if([6,0].includes(dia)){
@@ -201,9 +204,72 @@ function selectionDate(){
         }
         else {
             cita.fecha=e.target.value;
+            // const citas = await fetchCitas()
+            // const citas = resp.json()
+
+            // console.log('citas:', citas)
+            // citas.map(cita => console.log(cita))
+
+            // const citasReservadas = citas.filter(cita => cita.fecha === e.target.value)
+            // console.log('reservadas: ',citasReservadas)
+            // const horasReservadas = citasReservadas.map(cita => cita.hora.slice(0,2))
+
+            // console.log('horasReservadas: ',horasReservadas)
+
+            //ESTE CODIGO ESTA DE REVISAR es el q tiene mejor logica
+            // if(horasReservadas.length === 0) {
+
+            //   document.getElementsByTagName('li').map(element => {
+            //          document.getElementById(element.value).className = ''
+            //          console.log(element.value)
+            //      })
+
+            //      // for(let j = 0; j < document.getElementsByTagName('li').length; j++) {
+                
+            //      //     document.getElementById(horasReservadas[i]).className = 'green'
+            //      // }
+            //  } else {
+
+            //      for( let i = 0 ;  i < horasReservadas.length ; i++) {
+                    
+            //          for(let j = 0; j < document.getElementsByTagName('li').length; j++) {
+                    
+            //          if(horasReservadas[i] === document.getElementById(horasReservadas[i])) document.getElementById(horasReservadas[i]).className = 'red'
+            //         else document.getElementById(horasReservadas[i]).className = 'green'
+            //      }
+    
+            //      }
+            //  }
+
+
+            // citasReservadas.forEach(cita => {
+            //     if(cita.hora.slice(0,2) === document.getElementsByTagName('li')[0].id){
+            //         document.getElementById(`#${cita.hora.slice(0,1)}`).className = 'red'
+            //     }
+            //     document.getElementById(`${cita.hora.slice(0,2)}`).className = 'red'
+            //     console.log('hora: ',cita.hora.slice(0,2) )
+            //     //else document.getElementById(`#${cita.hora.slice(0,1)}`).className = 'green'
+            // })
+
+
+
         }
     });
 }
+
+// const fetchCitas = async () => {
+
+//     try {
+//         const resp = await fetch('http://localhost:3000/api/infoCitas')
+//         const citas = await resp.json()
+    
+//         return citas
+
+//     } catch(error) {
+//         console.log(error)
+//     }
+
+// }
 
 function selectionTime(){
     const inputHora= document.querySelector('#hora');

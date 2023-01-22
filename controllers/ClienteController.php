@@ -5,16 +5,60 @@ use Model\Servicio;
 use Model\Usuario;
 use MVC\Router;
 use Classes\Email;
+use Classes\Paginacion;
 
 class ClienteController{
     public static function index(Router $router){
         isAdmin();
+        // $clientes=Usuario::all();
+        // echo json_encode($clientes);
 
-        $usuarios=Usuario::all();
+
+
+
+        //CONSULTAR LA BASE DE DATOS
+        //$auth = new Usuario($_POST);
+        // $id = ($_GET['id']);
+        // $query = "SELECT * FROM usuarios WHERE id= nombre LIKE '%$busqueda'" ;
+        // while($row=$query->fetch_array()){
+        //     debuguear($query);
+        // }
+        //$usuario = Usuario::where('nombre', $usuario->id);
+       
+       
+        //error_reporting(0);
+
+        //$cliente=' Patricia';
+        //debuguear($cliente);
+        
+
+        //PAGINACION
+        $paginaActual=$_GET['page'];
+        $paginaActual=filter_var($paginaActual, FILTER_VALIDATE_INT);
+        if(!$paginaActual || $paginaActual <1){
+            header('Location: /clientes?page=1');
+        }
+        //debuguear($paginaActual);
+
+        //$paginaActual=1;
+        $registrosPagina=1;
+        $total=Usuario::total();
+
+        $paginacion=new Paginacion($paginaActual, $registrosPagina, $total);
+
+        if($paginacion->totalPaginas() <$paginaActual){
+            header('Location: /clientes?page=1');
+        }
+        
+        //USUARIOS CLIENTES
+        $usuarios=Usuario::paginar($registrosPagina, $paginacion->offset());
+        //debuguear($usuarios);
+
 
         $router->render('cliente/index', [
             'nombre'=>$_SESSION['nombre'],
-            'usuarios'=>$usuarios
+            'usuarios'=>$usuarios,
+            'paginacion'=>$paginacion->paginacion()
 
         ]);
     }

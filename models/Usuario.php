@@ -17,6 +17,9 @@ class Usuario extends ActiveRecord{
     public $token;
 
     public function __construct($args=[]){
+
+        //$cliente='Patricia';
+
         $this->id=$args['id'] ?? null;
         $this->nombre=$args['nombre'] ?? '';
         $this->apellido=$args['apellido'] ?? '';
@@ -26,6 +29,8 @@ class Usuario extends ActiveRecord{
         $this->admin=$args['admin'] ?? '0';
         $this->confirmado=$args['confirmado'] ?? '0';
         $this->token=$args['token'] ?? '';
+        //$query="SELECT * FROM " . self::$tabla . " WHERE nombre = 'Patricia'";
+        //debuguear($query);
     }
 
     //MENSAJES DE VALIDACION PARA LA CREACION DE UNA CUENTA

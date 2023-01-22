@@ -16,10 +16,13 @@ class AdminController{
         if(!checkdate($fechas[1], $fechas[2], $fechas[0])){
             header('Location:/404');
         }
+
+        // $nombre=$GEt['cliente'] ?? NULL;
+        // debuguear($nombre); 
         
         //debuguear($fecha);
         //CONSULTAR LA BASE DE DATOS
-        $consulta = "SELECT citas.id, citas.hora, CONCAT( usuarios.nombre, ' ', usuarios.apellido) as cliente, ";
+        $consulta = "SELECT citas.id, citas.hora, citas.estado, CONCAT( usuarios.nombre, ' ', usuarios.apellido) as cliente, ";
         $consulta .= " usuarios.email, usuarios.telefono, servicios.nombre as servicio, servicios.precio  ";
         $consulta .= " FROM citas  ";
         $consulta .= " LEFT OUTER JOIN usuarios ";

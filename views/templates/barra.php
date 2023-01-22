@@ -1,7 +1,11 @@
 <div class="barra">
     <p>Hola <?php echo $nombre ?? ''; ?></p>
-    <i class="fa-thin fa-user"></i>
-    <a class="boton" href="/logout">Cerrar Sesión</a>
+    <div class="barraServicio">
+    <a class="boton" href="/perfil">Perfil</a>
+    <a class="boton" href="/logout">Salir</a>
+    </div>
+    
+    
 </div>
 
 <?php if (isset($_SESSION['admin'])){?>

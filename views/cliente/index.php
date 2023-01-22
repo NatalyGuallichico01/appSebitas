@@ -15,6 +15,87 @@
 
 <?php } ?>
 
+
+<!-- SEGUNDO INTENTO -->
+
+<h2>Buscar Clientes</h2>
+<fieldset class="formulario__fieldset">
+    <div class="campo">
+        <label for="usuarios" class="formulario__label">Nombre: </label>
+        <input type="text" class="formulario__input" id="usuarios" placeholder="Buscar Nombre"/>
+        <ul id="listadoCLientes" class="listadoClientes"></ul>
+    </div>
+    
+</fieldset>
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div id=clientesAdmin>
+    <ul class="citas">
+    <?php
+    
+    //foreach($usuarios as $usuario){
+    ?>
+    <li>
+       // <p>ID: <span><?php// echo $usuario->id; ?></span></p>
+        <p>Nombre: <span><?php //echo $usuario->nombre; ?></span></p>
+        <p>Apellido: <span><?php //echo $usuario->apellido; ?></span></p>
+        <p>Teléfono: <span><?php// echo $usuario->telefono; ?></span></p>
+        <p>E-mail: <span><?php// echo $usuario->email; ?></span></p>
+    </li>
+ //   <?php //}?>
+    </ul>
+</div> -->
+
+
+
+
+
+
+
+
+
+<!-- <h1>Buscar Clientes</h1>
+<form action="" method="GET">
+    <input type="text" name="busqueda"><br>
+    <input type="submit" name="enviar" value="Buscar">
+</form>
+<br><br><br>
+
+<?php
+
+//include '../includes/database.php';
+
+//if(isset($_GET['enviar'])){
+ //   $busqueda=$_GET['busqueda'];
+ //   $consulta=$db->query("SELECT * FROM usuarios nombre LIKE %busqueda%");
+ //   debuguear($consulta);
+ //   while($row=$consulta->fetch_array()){
+ //       echo $row['nombre'];
+       
+ //   }
+//}
+ ?> -->
+
+
+
+
+
+
+
+
+
+
+<h2>Clientes</h2>
+
 <ul class="servicios">
     <?php foreach($usuarios as $usuario) {?>
         <li>
@@ -27,9 +108,17 @@
                 <a class="boton" href="/clientes/actualizar?id=<?php echo $usuario->id; ?>">Actualizar</a>
                 <form action="/clientes/eliminar" method="POST">
                     <input type="hidden" name="id" value="<?php echo $usuario->id; ?>"/>
-                    <input type="submit" value="Eliminar" class="botonDelete">
+                    <!--<input type="submit" value="Eliminar" class="botonDelete">-->
                 </form>
             </div>
         </li>
     <?php } ?>
 </ul>
+
+<?php
+echo $paginacion;
+?>
+
+<?php 
+    $script="<script src='build/js/clientes.js'></script>";
+?>

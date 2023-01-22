@@ -37,7 +37,17 @@ include_once __DIR__ . '/../templates/barra.php';
 
             <div class="campo">
                 <label for="hora">Hora: </label>
-                <input id="hora" type="time" />
+                <input id="hora" type="time" /> 
+                <!-- <ul class="tabla_horas">
+                    <li id="9" value="9">9-10</li>
+                    <li id="10:00" value="10">10-11</li>
+                    <li id="11:00" value="11">11-12</li>
+                    <li id="12:00" value="12">12-13</li>
+                    <li id="13:00" value="13">14-15</li>
+                    <li id="14:00" value="14">15-16</li>
+                    <li id="15:00" value="15">16-17</li>
+                    <li id="16:00" value="16">17-18</li>
+                </ul> -->
             </div>
 
             <input type="hidden" id="id" value="<?php echo $id; ?>"/>
@@ -51,7 +61,7 @@ include_once __DIR__ . '/../templates/barra.php';
         
     </div>
 
-    <div class="paginacion">
+    <div class="paginacion1">
         <button id="anterior" class="boton">&laquo; Anterior</button>
         <button id="siguiente" class="boton">Siguiente &raquo;</button>
     </div>

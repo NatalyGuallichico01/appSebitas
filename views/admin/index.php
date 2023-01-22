@@ -7,7 +7,7 @@ include_once __DIR__ . '/../templates/barra.php';
 <div class="busqueda">
     <form class="formulario">
         <div class="campo">
-            <label for="fecha">Fecha</label>
+            <label for="fecha">Fecha: </label>
             <input type="date" id="fecha" name="fecha" value="<?php echo $fecha ?>"/>
         </div>
     </form>
@@ -39,6 +39,7 @@ include_once __DIR__ . '/../templates/barra.php';
                     <p>Cliente: <span><?php echo $cita->cliente; ?></span></p>
                     <p>E-mail: <span><?php echo $cita->email; ?></span></p>
                     <p>Teléfono: <span><?php echo $cita->telefono; ?></span></p>
+                    <p>Estado: <span><?php echo $cita->estado; ?></span></p>
 
                     <h3>Servicios</h3>
                 <?php
@@ -50,14 +51,16 @@ include_once __DIR__ . '/../templates/barra.php';
                 <p class="servicio"><?php echo $cita->servicio . " " . $cita->precio; ?></p>
                 <?php 
                 $actual=$cita->id;
+                //debuguear($cita);
+                //$cita->estado="1";
                 $proximo=$citas[$key+1]->id ?? 0;
 
                 if (isLast($actual, $proximo)) {
                     ?> 
                     <p class="total">Total: <span>$ <?php echo $total ?></span></p>
-                    <form action="api/delete" method="POST">
+                    <form  method="GET">
                         <input type="hidden" name="id" value="<?php echo $cita->id; ?>"/>
-                        <input type="submit" class="botonDelete" value="Eliminar"/>
+                        <input type="submit" name="estado" id="estado" class="botonDelete" value="Atendido" onClick=<?php $cita->estado="1"; ?>/>
                     </form>
                     <?php
                 }

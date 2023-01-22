@@ -123,12 +123,27 @@ class ActiveRecord {
         return array_shift( $resultado ) ;
     }
 
+    //PAGINAR LOS REGISTROS
+    public static function paginar($porPagina, $offset){
+        $query = "SELECT * FROM " . static::$tabla . " ORDER BY id DESC LIMIT ${porPagina} OFFSET ${offset} ";
+        $resultado = self::consultarSQL($query);
+        return  $resultado;
+    }
+
     // Busca un registro por su TOKEN
     public static function where($columna, $valor) {
         $query = "SELECT * FROM " . static::$tabla  ." WHERE ${columna} = '${valor}'";
         //debuguear($query);
         $resultado = self::consultarSQL($query);
         return array_shift( $resultado ) ;
+    }
+
+    //TRAER UN TOTAL DE REGISTROS
+    public static function total(){
+        $query = "SELECT COUNT(*) FROM " . static::$tabla;
+        $resultado=self::$db->query($query);
+        $total=$resultado->fetch_array();
+        return array_shift($total);
     }
 
     //Consulta plana de SQL (Utilizar cuando los metodos del modelo no son suficientes) 
