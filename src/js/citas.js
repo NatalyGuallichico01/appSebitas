@@ -1,4 +1,3 @@
-
 $('#hora').timepicker({
     timeFormat: 'H:i',
     minTime: '08:00am',
