@@ -10,6 +10,7 @@ use Controllers\AdminController;
 use Controllers\ServicioController;
 use Controllers\ClienteController;
 use Controllers\APIClientes;
+use Controllers\RolController;
 use MVC\Router;
 
 $router = new Router();
@@ -40,6 +41,8 @@ $router->get('/mensaje', [LoginController::class, 'mensaje']);
 //AREA PRIVADA
 $router->get('/cita', [CitaController::class, 'index']);
 $router->get('/admin', [AdminController::class, 'index']);
+$router->get('/admin/reportes', [AdminController::class, 'reporte']);
+//$router->get('/reportes', [AdminController::class, 'index']);
 
 //API DE CITAS
 $router->get('/api/servicios', [APIController::class, 'index']);
@@ -49,9 +52,11 @@ $router->post('/api/delete', [APIController::class, 'delete']);
 //API DE INFORMACION DE CITAS
 $router->get('/api/infoCitas', [APICitasController::class, 'index']);
 
+
 //API DE CLIENTES
 //$router->get('/api/infoCitas', [APICitasController::class, 'index']);
 $router->get('/api/clientes', [APIClientes::class, 'index']);
+
 
 //CRUD de Servicios
 $router->get('/servicios', [ServicioController::class, 'index']);
@@ -68,6 +73,14 @@ $router->post('/clientes/crear', [ClienteController::class, 'crear']);
 $router->get('/clientes/actualizar', [ClienteController::class, 'actualizar']);
 $router->post('/clientes/actualizar', [ClienteController::class, 'actualizar']);
 $router->post('/clientes/eliminar', [ClienteController::class, 'eliminar']);
+
+//CRUD DE ROLES
+$router->get('/roles', [RolController::class, 'index']);
+$router->get('/roles/crear', [RolController::class, 'crear']);
+$router->post('/roles/crear', [RolController::class, 'crear']);
+$router->get('/roles/actualizar', [RolController::class, 'actualizar']);
+$router->post('/roles/actualizar', [RolController::class, 'actualizar']);
+$router->post('/roles/eliminar', [RolController::class, 'eliminar']);
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();

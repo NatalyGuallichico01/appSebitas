@@ -1,7 +1,7 @@
 <div class="barra">
     <p>Hola <?php echo $nombre ?? ''; ?></p>
     <div class="barraServicio">
-    <a class="boton" href="/perfil">Perfil</a>
+    <!-- <a class="boton" href="/perfil">Perfil</a> -->
     <a class="boton" href="/logout">Salir</a>
     </div>
     

@@ -37,7 +37,7 @@ include_once __DIR__ . '/../templates/barra.php';
 
             <div class="campo">
                 <label for="hora">Hora: </label>
-                <input id="hora" type="time" /> 
+                <input id="hora"  /> 
                 <!-- <ul class="tabla_horas">
                     <li id="9" value="9">9-10</li>
                     <li id="10:00" value="10">10-11</li>
@@ -73,5 +73,6 @@ include_once __DIR__ . '/../templates/barra.php';
     $script="
         <script src='//cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script src='build/js/app.js'></script>
+        <script src='build/js/citas.js'></script>
     ";
 ?>

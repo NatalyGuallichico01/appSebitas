@@ -4,11 +4,21 @@ include_once __DIR__ . '/../templates/barra.php';
 ?>
 
 <h2>Buscar Citas</h2>
+
+
+    <a class="botonReporte" href="/admin/reportes">Reporte pdf</a>
+
+
+<!-- <input type="submit" name="estado" id="estado" class="botonReporte" value="Reporte" />  -->
 <div class="busqueda">
     <form class="formulario">
         <div class="campo">
-            <label for="fecha">Fecha: </label>
-            <input type="date" id="fecha" name="fecha" value="<?php echo $fecha ?>"/>
+            <label for="fecha">Fecha Inicio: </label>
+            <input type="date" id="fechaInicio" name="fecha" value="<?php echo $fecha ?>"/>
+        </div>
+        <div class="campo">
+            <label for="fecha">Fecha Fin: </label>
+            <input type="date" id="fechaFin" name="fecha" value="<?php echo $fecha ?>"/>
         </div>
     </form>
 </div>
@@ -39,7 +49,8 @@ include_once __DIR__ . '/../templates/barra.php';
                     <p>Cliente: <span><?php echo $cita->cliente; ?></span></p>
                     <p>E-mail: <span><?php echo $cita->email; ?></span></p>
                     <p>Teléfono: <span><?php echo $cita->telefono; ?></span></p>
-                    <p>Estado: <span><?php echo $cita->estado; ?></span></p>
+                    <!-- <p>Estado: <span><?php //echo $cita->estado; ?></span></p> -->
+                    <hr>
 
                     <h3>Servicios</h3>
                 <?php
@@ -56,11 +67,19 @@ include_once __DIR__ . '/../templates/barra.php';
                 $proximo=$citas[$key+1]->id ?? 0;
 
                 if (isLast($actual, $proximo)) {
+
                     ?> 
                     <p class="total">Total: <span>$ <?php echo $total ?></span></p>
-                    <form  method="GET">
+                    <form action="/api/delete" method="POST">
                         <input type="hidden" name="id" value="<?php echo $cita->id; ?>"/>
-                        <input type="submit" name="estado" id="estado" class="botonDelete" value="Atendido" onClick=<?php $cita->estado="1"; ?>/>
+                        <?php 
+                        if($cita->estado==="0"){
+                            ?>
+                        <input type="submit" name="estado" id="estado" class="botonDelete" value="Atendido" />
+                        <?php
+                        }
+                         ?>
+                        
                     </form>
                     <?php
                 }
@@ -72,6 +91,11 @@ include_once __DIR__ . '/../templates/barra.php';
 
 </div>
 
+
+
+
 <?php 
+    
     $script="<script src='build/js/buscador.js'></script>";
+    
 ?>

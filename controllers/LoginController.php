@@ -86,7 +86,7 @@ class LoginController{
                 }
 
                 else{
-                    Usuario::setAlerta('error', 'El usuario no exitse o no esta confimado');
+                    Usuario::setAlerta('error', 'El usuario no existe o no esta confimado');
                 }
             }
         }

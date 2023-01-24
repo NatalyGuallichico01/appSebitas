@@ -20,3 +20,7 @@ include_once __DIR__ . '/../templates/barra.php';
         </li>
     <?php } ?>
 </ul>
+
+<?php
+echo $paginacion;
+?>

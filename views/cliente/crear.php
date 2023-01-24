@@ -11,6 +11,7 @@
     <a class="boton" href="/admin">Ver Citas</a>
     <a class="boton" href="/clientes">Ver Clientes</a>
     <a class="boton" href="/clientes/crear">Nuevo Cliente</a>
+    <a class="boton" href="/roles">Ver Rol</a>
 </div>
 
 <?php } ?>
