@@ -103,7 +103,7 @@ class ServicioController{
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $id=$_POST['id'];
             $servicio=Servicio::find($id);
-            $servicio->eliminar();
+            $servicio->eliminarLogica();
             header('Location: /servicios')
 ;        }
     }
