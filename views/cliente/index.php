@@ -9,7 +9,7 @@
 <?php if (isset($_SESSION['admin'])){?>
 <div class="barraServicios">
     <a class="boton" href="/admin">Ver Citas</a>
-    <!--<a class="boton" href="/clientes">Ver Clientes</a>-->
+    <!-- <a class="boton" href="/rol/crear">Nuevo Rol</a> -->
     <a class="boton" href="/clientes/crear">Nuevo Cliente</a>
 </div>
 

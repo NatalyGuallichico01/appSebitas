@@ -56,7 +56,7 @@ class APIController{
             $cita=Cita::find($id);
             $cita->eliminar();
             header('Location:' . $_SERVER['HTTP_REFERER']);
-            
+
         }
     }
 }

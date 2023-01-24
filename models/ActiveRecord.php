@@ -200,9 +200,16 @@ class ActiveRecord {
 
     // Eliminar un Registro por su ID
     public function eliminar() {
-        $query = "DELETE FROM "  . static::$tabla . " WHERE id = " . self::$db->escape_string($this->id) . " LIMIT 1";
+        $query = "UPDATE "  . static::$tabla . " SET estado=1". " WHERE id = " . self::$db->escape_string($this->id) . " LIMIT 1";
         $resultado = self::$db->query($query);
         return $resultado;
     }
+
+    // Eliminacion Logica un Registro por su ID
+    // public function eliminarLogica() {
+    //     $query = "DELETE FROM "  . static::$tabla . " WHERE id = " . self::$db->escape_string($this->id) . " LIMIT 1";
+    //     $resultado = self::$db->query($query);
+    //     return $resultado;
+    // }
 
 }

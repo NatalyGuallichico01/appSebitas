@@ -41,7 +41,7 @@ class ClienteController{
         //debuguear($paginaActual);
 
         //$paginaActual=1;
-        $registrosPagina=1;
+        $registrosPagina=2;
         $total=Usuario::total();
 
         $paginacion=new Paginacion($paginaActual, $registrosPagina, $total);
