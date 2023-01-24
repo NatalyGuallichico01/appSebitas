@@ -271,22 +271,18 @@ function selectionDate(){
 
 // }
 
+
+var getSelectedTime; 
+$(function ($) {
+    getSelectedTime = function () {
+        $('#hora').on('changeTime', function() {
+            cita.hora=$(this).val()
+        });
+    }
+})
+
 function selectionTime(){
-    const inputHora= document.querySelector('#hora');
-    inputHora.addEventListener('input', function(e){
-        
-        const horaCita=e.target.value;
-        const hora=horaCita.split(":")[0];
-        if(hora<10 || hora>18){
-            e.target.value='';
-            viewAlert('Fuera de horario de trabajo', 'error', '.formulario');
-            console.log('Hora no válida1');
-        }
-        else{
-            cita.hora=e.target.value;
-            
-        }
-    })
+    getSelectedTime()
 }
 
 function viewAlert(mensaje, tipo, elemento, desaparece= true){

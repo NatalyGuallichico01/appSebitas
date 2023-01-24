@@ -37,21 +37,10 @@ include_once __DIR__ . '/../templates/barra.php';
 
             <div class="campo">
                 <label for="hora">Hora: </label>
-                <input id="hora" type="time" /> 
-                <!-- <ul class="tabla_horas">
-                    <li id="9" value="9">9-10</li>
-                    <li id="10:00" value="10">10-11</li>
-                    <li id="11:00" value="11">11-12</li>
-                    <li id="12:00" value="12">12-13</li>
-                    <li id="13:00" value="13">14-15</li>
-                    <li id="14:00" value="14">15-16</li>
-                    <li id="15:00" value="15">16-17</li>
-                    <li id="16:00" value="16">17-18</li>
-                </ul> -->
+                <input id="hora"/>
             </div>
 
             <input type="hidden" id="id" value="<?php echo $id; ?>"/>
-            
         </form>
 
     </div>
@@ -66,12 +55,12 @@ include_once __DIR__ . '/../templates/barra.php';
         <button id="siguiente" class="boton">Siguiente &raquo;</button>
     </div>
 
-
 </div>
 
 <?php
     $script="
         <script src='//cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script src='build/js/app.js'></script>
+        <script src='build/js/citas.js'></script>
     ";
 ?>

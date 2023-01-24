@@ -48,6 +48,7 @@ $router->post('/api/delete', [APIController::class, 'delete']);
 
 //API DE INFORMACION DE CITAS
 $router->get('/api/infoCitas', [APICitasController::class, 'index']);
+$router->post('/api/citas/horasBloqueadas', [APICitasController::class, 'horasBloqueadas']);
 
 //API DE CLIENTES
 //$router->get('/api/infoCitas', [APICitasController::class, 'index']);
