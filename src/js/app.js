@@ -303,45 +303,7 @@ $(function ($) {
 })
 
 function selectionTime(){
-<<<<<<< HEAD
     getSelectedTime()
-=======
-
-
-
-
-
-    // //ESTO HAY QUE BORRAR 
-    const selectedDate = getSelectedDate();
-    console.log('selectedDate', selectedDate);
-    cita.hora=selectedDate;
-    // //HASTA AQUI
-
-
-
-
-
-
-
-
-
-
-    // const inputHora= document.querySelector('#hora');
-    // inputHora.addEventListener('input', function(e){
-        
-    //     const horaCita=e.target.value;
-    //     const hora=horaCita.split(":")[0];
-    //     if(hora<10 || hora>18){
-    //         e.target.value='';
-    //         viewAlert('Fuera de horario de trabajo', 'error', '.formulario');
-    //         console.log('Hora no válida1');
-    //     }
-    //     else{
-    //         cita.hora=e.target.value;
-            
-    //     }
-    // })
->>>>>>> d144ae819fdc547fc548bda5588fd7906d82eb3d
 }
 
 function viewAlert(mensaje, tipo, elemento, desaparece= true){
