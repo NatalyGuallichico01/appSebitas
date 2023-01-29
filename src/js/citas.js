@@ -1,10 +1,10 @@
 $('#hora').timepicker({
     timeFormat: 'H:i',
-    minTime: '08:00am',
-    maxTime: '05:00pm',
+    minTime: '09:00am',
+    maxTime: '06:00pm',
     step: 60, // 15 minutes
-    disableTimeRanges: []
-    // showDuration: true
+    disableTimeRanges: [],
+    //showDuration: true
 });
 
 
@@ -13,11 +13,11 @@ $(function ($) {
     updateTimePicker = function (_disabledRanges) {
         $('#hora').timepicker({
             timeFormat: 'H:i',
-            minTime: '08:00am',
-            maxTime: '05:00pm',
+            minTime: '09:00am',
+            maxTime: '06:00pm',
             step: 60, // 15 minutes
             disableTimeRanges: _disabledRanges,
-            // showDuration: true
+           // showDuration: true
         });
     }
 })

@@ -4,9 +4,14 @@
 <br/>
 <p class="descripcionPagina">Elige el/los servicios que deseas e ingresa tus datos</p>
 
-<?php
-include_once __DIR__ . '/../templates/barra.php';
-?>
+<!-- <?php
+//include_once __DIR__ . '/../templates/barra.php';
+?> -->
+
+<div class="barra">
+    <p>Hola <?php echo $nombre ?? ''; ?></p>
+    <a class="boton" href="/logout">Cerrar Sesión</a>
+</div>
 
 <div id="app">
     <nav class="tabs">

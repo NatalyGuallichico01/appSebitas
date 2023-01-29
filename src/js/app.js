@@ -207,12 +207,6 @@ $(function ($) {
 })
 
 
-
-
-
-
-
-
 function selectionDate(){
     const inputFecha= document.querySelector('#fecha');
     //const citas = await fetchCitas()

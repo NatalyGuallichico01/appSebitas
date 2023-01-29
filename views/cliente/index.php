@@ -18,7 +18,9 @@
 
 <!-- SEGUNDO INTENTO -->
 
-<h2>Buscar Clientes</h2>
+<!--DESCOMENTAR EN CASO DE BUSQUEDA DE CLIENTES POR NOMBRE -->
+
+<!-- <h2>Buscar Clientes</h2>
 <fieldset class="formulario__fieldset">
     <div class="campo">
         <label for="usuarios" class="formulario__label">Nombre: </label>
@@ -26,7 +28,7 @@
         <ul id="listadoCLientes" class="listadoClientes"></ul>
     </div>
     
-</fieldset>
+</fieldset> -->
 
 
 

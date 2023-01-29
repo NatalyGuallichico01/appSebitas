@@ -2,11 +2,15 @@
 <?php
 include_once __DIR__ . '/../templates/barra.php';
 ?>
+<!-- <button class="boton" id="btnCrearPdf">Crear Pdf</button> -->
 
 <h2>Buscar Citas</h2>
 
 
-    <a class="botonReporte" href="/admin/reportes">Reporte pdf</a>
+     <a class="botonReporte" href="/admin/filtro">Reporte</a>
+     <!-- Los cambios que se encontraban en el archivo filtro estan en generate y viceversa
+    modificar en caso de backup -->
+    
 
 
 <!-- <input type="submit" name="estado" id="estado" class="botonReporte" value="Reporte" />  -->
@@ -14,11 +18,11 @@ include_once __DIR__ . '/../templates/barra.php';
     <form class="formulario">
         <div class="campo">
             <label for="fecha">Fecha Inicio: </label>
-            <input type="date" id="fechaInicio" name="fecha" value="<?php echo $fecha ?>"/>
+            <input type="date" id="fecha" name="fecha" value="<?php echo $fecha ?>"/>
         </div>
         <div class="campo">
             <label for="fecha">Fecha Fin: </label>
-            <input type="date" id="fechaFin" name="fecha" value="<?php echo $fecha ?>"/>
+            <input type="date" id="fechaFin" name="fecha" value="<?php// echo $fechaFinal ?>"/>
         </div>
     </form>
 </div>
@@ -94,8 +98,21 @@ include_once __DIR__ . '/../templates/barra.php';
 
 
 
+
+<!-- <?php
+//require('../fpdf/fpdf.php');
+
+//$pdf = new FPDF();
+//$pdf->AddPage();
+//$pdf->SetFont('Arial','B',16);
+//$pdf->Cell(40,10,'¡Hola, Mundo!');
+//$pdf->Output();
+?> -->
+
+
 <?php 
     
     $script="<script src='build/js/buscador.js'></script>";
+   // $script="<script src='build/js/script.js'></script>";
     
 ?>

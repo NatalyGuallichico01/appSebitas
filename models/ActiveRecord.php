@@ -198,14 +198,15 @@ class ActiveRecord {
         return $resultado;
     }
 
-    // Eliminar un Registro por su ID
+    
+    //Eliminacion Logica un Registro por su ID
     public function eliminar() {
         $query = "UPDATE "  . static::$tabla . " SET estado=1". " WHERE id = " . self::$db->escape_string($this->id) . " LIMIT 1";
         $resultado = self::$db->query($query);
         return $resultado;
     }
 
-    // Eliminacion Logica un Registro por su ID
+    // Eliminar un Registro por su ID
     public function eliminarLogica() {
          $query = "DELETE FROM "  . static::$tabla . " WHERE id = " . self::$db->escape_string($this->id) . " LIMIT 1";
          $resultado = self::$db->query($query);

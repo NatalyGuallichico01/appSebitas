@@ -41,7 +41,9 @@ $router->get('/mensaje', [LoginController::class, 'mensaje']);
 //AREA PRIVADA
 $router->get('/cita', [CitaController::class, 'index']);
 $router->get('/admin', [AdminController::class, 'index']);
-$router->get('/admin/reportes', [AdminController::class, 'reporte']);
+$router->get('/admin/filtro', [AdminController::class, 'filtro']);
+
+
 //$router->get('/reportes', [AdminController::class, 'index']);
 
 //API DE CITAS

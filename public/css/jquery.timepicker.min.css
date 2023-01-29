@@ -10,16 +10,20 @@
 	outline: none;
 	z-index: 10052;
 	margin: 0;
+	
+	
 }
 
 .ui-timepicker-wrapper .ui-timepicker-list li {
     padding-right: 20px;
+	position: relative;
 }
 
 .ui-timepicker-list {
 	margin: 0;
 	padding: 0;
 	list-style: none;
+	position: relative;
 }
 
 .ui-timepicker-duration {
@@ -37,6 +41,7 @@
 	color: #000;
 	list-style: none;
 	margin: 0;
+	position: relative;
 }
 
 .ui-timepicker-list:hover .ui-timepicker-selected {

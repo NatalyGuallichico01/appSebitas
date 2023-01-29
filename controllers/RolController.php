@@ -82,7 +82,7 @@ class RolController{
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $id=$_POST['id'];
             $rol=Rol::find($id);
-            $rol->eliminar();
+            $rol->eliminarLogica();
             header('Location: /roles');
         }
 

@@ -42,16 +42,16 @@ class AdminController{
         // //debuguear($usuarios);
 
         $fecha=$_GET['fecha'] ?? date('Y-m-d');
-        $fecha1=$_GET['fecha'] ?? date('Y-m-d');
+        //$fechaFinal=$_GET['fechaFin'] ?? date('Y-m-d');
         $fechas=explode('-',$fecha);
         if(!checkdate($fechas[1], $fechas[2], $fechas[0])){
             header('Location:/404');
         }
 
-        $fechas1=explode('-',$fecha1);
-        if(!checkdate($fechas[1], $fechas[2], $fechas[0])){
-            header('Location:/404');
-        }
+        // $fechas1=explode('-',$fecha1);
+        // if(!checkdate($fechas[1], $fechas[2], $fechas[0])){
+        //     header('Location:/404');
+        // }
 
         // $nombre=$GEt['cliente'] ?? NULL;
         // debuguear($nombre); 
@@ -84,7 +84,7 @@ class AdminController{
     }
 
     //reportes
-    public static function reporte(Router $router){
+    public static function filtro(Router $router){
         //session_start();
 
         isAdmin();
