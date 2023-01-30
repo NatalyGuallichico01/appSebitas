@@ -1,35 +1,90 @@
 
 <?php
-//require_once 'dompdf/autoload.inc.php';
+//require __DIR__ . 'dompdf/autoload.inc.php';
+
+//$mysql=new mysqli('localhost', 'root', 'admin', 'appsebitas');
+use Model\AdminCita;
 use Dompdf\Dompdf;
+use Dompdf\Option;
+use Dompdf\Exception as DompdfException;
+use Dompdf\Optins;
+
 // instantiate and use the dompdf class
 $dompdf = new Dompdf();
 // $dompdf->loadHtml('hello world');
-$dompdf->load_html('<!DOCTYPE html>
-<html>
-<head>
-<title>Ejemplo de PHP en HTML</title>
-</head>
-<body>
-
-<h2>Buscar Citas</h2>
-
-
-<input type="submit" name="estado" id="estado" class="botonReporte" value="Reporte" /> 
-<div class="busqueda">
-    <form class="formulario">
-        <div class="campo">
-            <label for="fecha">Fecha Inicio: </label>
-            <input type="date" id="fechaInicio" name="fecha" value="<?php echo $fecha ?>"/>
-        </div>
-        <div class="campo">
-            <label for="fecha">Fecha Fin: </label>
-            <input type="date" id="fechaFin" name="fecha" value="<?php echo $fecha ?>"/>
-        </div>
-    </form>
-</div>
-</body>
-</html>
+$dompdf->load_html(
+    
+    '<!DOCTYPE html>
+    <html>
+    <head>
+        <style>
+            @page {
+                margin: 0cm 0cm;
+                font-family: Arial;
+            }
+    
+            body {
+                margin: 3cm 2cm 2cm;
+            }
+    
+            header {
+                position: fixed;
+                top: 0cm;
+                left: 0cm;
+                right: 0cm;
+                height: 2cm;
+                background-color: #2a0927;
+                color: white;
+                text-align: center;
+                line-height: 30px;
+            }
+    
+            footer {
+                position: fixed;
+                bottom: 0cm;
+                left: 0cm;
+                right: 0cm;
+                height: 2cm;
+                background-color: #2a0927;
+                color: white;
+                text-align: center;
+                line-height: 35px;
+            }
+        </style>
+    </head>
+    <body>
+    <header>
+        <h1>PELUQUERIA SEBITAS</h1>
+    </header>
+    
+    <main>
+        <h1>Reporte de citas </h1>
+        <table>
+        <thead>
+        <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Fecha</th>
+        <th>Hora</th>
+        <th>Estado</th>
+        </tr>
+        </thead>
+        <tbody>
+        <td>Nataly<td/>
+        <td>Guallichico<td/>
+        <td>2023-01-26<td/>
+        <td>10:30<td/>
+        <td>Atendido<td/>
+        </tbody>
+        </table>
+    </main>
+    <?php echo "Desde reportes" ?>
+    
+    <footer>
+        <h1>Natilu01</h1>
+    </footer>
+    </body>
+    </html>
 ');
 
 
@@ -41,7 +96,7 @@ $dompdf->render();
 $fecha = date('H:i:s');
 
 // Output the generated PDF to Browser
-$dompdf->stream("archivo.pdf", array("Attachment" => 0));
+$dompdf->stream(time()."archivo.pdf", array("Attachment" => 0))();
 
 
 // use Dompdf\Dompdf;

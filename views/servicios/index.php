@@ -12,10 +12,10 @@ include_once __DIR__ . '/../templates/barra.php';
             <p>Descripción: <span><?php echo $servicio -> descripcion; ?></span></p>
             <div class="acciones">
                 <a class="boton" href="/servicios/actualizar?id=<?php echo $servicio->id; ?>">Actualizar</a>
-                <form action="/servicios/eliminar" method="POST">
-                    <input type="hidden" name="id" value="<?php echo $servicio->id; ?>"/>
+                <!-- <form action="/servicios/eliminar" method="POST">
+                    <input type="hidden" name="id" value="<?php //echo $servicio->id; ?>"/>
                     <input type="submit" value="Eliminar" class="botonDelete">
-                </form>
+                </form> -->
             </div>
         </li>
     <?php } ?>

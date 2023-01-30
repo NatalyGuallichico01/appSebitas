@@ -3,7 +3,7 @@
         'name' => 'natilu/app-sebitas',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '1b1e0cf68c440f72a3e0b445d9e870077af970a4',
+        'reference' => 'c1c05eebe540602bd83b520486cd7ca9d5de9e51',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -40,7 +40,7 @@
         'natilu/app-sebitas' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '1b1e0cf68c440f72a3e0b445d9e870077af970a4',
+            'reference' => 'c1c05eebe540602bd83b520486cd7ca9d5de9e51',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

@@ -24,6 +24,7 @@ include_once __DIR__ . '/../templates/barra.php';
             <label for="fecha">Fecha Fin: </label>
             <input type="date" id="fechaFin" name="fecha" value="<?php// echo $fechaFinal ?>"/>
         </div>
+       
     </form>
 </div>
 
@@ -90,6 +91,52 @@ include_once __DIR__ . '/../templates/barra.php';
                 ?>
             <?php } // fin foreach 
             ?>
+
+    </ul>
+
+</div>
+
+<div>
+    <h1>Total citas</h1>
+
+
+    <ul class="totalCitas">
+        
+        <?php
+        $citasAtendidas=0;
+        $citasNoAtendidas=0;
+        $totalCitas=0;
+        
+        foreach ($citas as $cita) {
+           //debuguear($key);
+            if ($cita->estado==="1") {
+                $citasAtendidas++;
+        ?>
+        
+                
+                
+                <?php
+                
+                 
+            } //Fin de if 
+            else if($cita->estado==="0") {
+                $citasNoAtendidas++;
+        ?>
+        
+               
+                
+                <?php
+                
+                 
+            } //Fin de if 
+           
+             } // fin foreach 
+             $totalCitas=$citasAtendidas+$citasNoAtendidas;
+            ?>
+            
+            <p >Total Atendidas: <span><?php echo  $citasAtendidas?></span></p>
+            <p >Total No Atendidas: <span><?php echo $citasNoAtendidas?></span></p>
+            <p >Total: <span> <?php echo $totalCitas?></span></p>
 
     </ul>
 

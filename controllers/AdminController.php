@@ -144,7 +144,7 @@ class AdminController{
         $consulta .= " ON citasServicios.citaId=citas.id ";
         $consulta .= " LEFT OUTER JOIN servicios ";
         $consulta .= " ON servicios.id=citasServicios.servicioId ";
-        $consulta .= " WHERE fecha =  '{$fecha}' ";
+        $consulta .= " WHERE fecha >=  '{$fecha}' && fechaFin <= '{$fechaFin}'";
        
         $citas=AdminCita::SQL($consulta);
         
@@ -160,4 +160,36 @@ class AdminController{
         ]);
     }
    
+
+
+
+
+    function crear_pdf(){
+        $data=[
+            'title'=>'Crear nuevo reporte'
+        ];
+
+        $router->render('admin/reportes', [
+            'nombre'=>$_SESSION['nombre'],
+            'citas'=>$citas,
+            'fecha'=>$fecha,
+            //'paginacion'=>$paginacion->paginacion()
+        ]);
+    }
+
+    function post_crear_pdf(){
+        $texto=clean($_POST['texto']);
+        $contenido='<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+        </head>
+        <body>
+            
+        </body>
+        </html>';
+    }
 }
