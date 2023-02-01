@@ -1,6 +1,6 @@
 # appSebitas
 ### Clonar el proyecto
-- git clone url del proyecto 
+- git clone [url del proyecto](https://github.com/NatalyGuallichico01/appSebitas.git) 
 - npm install
 - composer install
 - composer update
