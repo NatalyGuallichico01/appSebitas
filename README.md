@@ -9,7 +9,7 @@
 - php -S localhost:3000
 
 ### Credenciales de usuarios
-- Usuario administrador
+- Usuario administrador <br>
 correo: admin@admin.com <br>
 password: adminadmin
 
